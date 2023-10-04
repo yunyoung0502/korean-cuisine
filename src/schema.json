@@ -1,30 +1,37 @@
 {
-   "type":"object",
-   "properties":{
-      "student_id":{
-         "type":"integer"
+   "type": "object",
+   "properties": {
+      "student_id": {
+         "type": "integer",
+         "pattern": "^[^\\s]+$"
       },
-      "name":{
-         "type":"string"
+      "name": {
+         "type": "string",
+         "pattern": "^[^\\s]+$"
       },
-      "image":{
-         "type":"string"
+      "image": {
+         "type": "string"
       },
-      "ingredients":{
-         "type":"array"
+      "ingredients": {
+         "type": "array",
+         "items": {
+            "type": "string",
+            "pattern": "^[^\\s]+$"
+         }
       },
-      "description":{
-         "type":"string"
+      "description": {
+         "type": "string"
       },
-      "book":{
-         "type":"string"
+      "book": {
+         "type": "string",
+         "pattern": "^[^\\s]+$"
       }
    },
-   "required":[
+   "required": [
       "student_id",
       "name",
       "ingredients",
       "book"
    ],
-   "additionalProperties":false
+   "additionalProperties": false
 }
