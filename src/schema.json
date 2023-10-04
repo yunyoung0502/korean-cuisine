@@ -1,7 +1,7 @@
 {
   type: "object",
   properties: {
-    student_id: {type: "integer"}
+    student_id: {type: "integer"},
     name: {type: "string"},
     image: {type: "string"},
     ingredients: {type: "array"},
