@@ -1,0 +1,46 @@
+name: automerge
+
+on:
+  push:
+    branches:
+      main
+
+jobs:
+  verify-json-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Validate JSON
+        id: validate
+        uses: nhalstead/validate-json-action@0.1.3
+        with:
+          schema: src/schema.json
+          jsons: src/data/*.json
+        continue-on-error: true
+      - name: Comment on failure
+        if: steps.validate.outcome == 'failure'
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const issue_number = context.payload.pull_request.number;
+            const repository = context.payload.repository.full_name;
+            const message = 'JSON validation failed. Please check your changes.';
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue_number,
+              body: message
+            });
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  automerge:
+    if: github.event.pull_request != null
+    needs: verify-json-validation
+    runs-on: ubuntu-latest
+    steps:
+      - id: automerge
+        name: automerge
+        uses: "pascalgn/automerge-action@v0.15.6"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
