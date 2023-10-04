@@ -1,9 +1,9 @@
-name: CICD-SSH
+name: Git Repository Update
 on:
   push:
       branches: [ main ]
       paths:
-        - '**'
+        - 'src/data/**'
 
 jobs:
   build:
@@ -18,5 +18,4 @@ jobs:
         port: 22
         script: |
             cd /home/ubuntu/${{ github.event.repository.name }}
-            pwd
             sh deploy-ssh.sh
