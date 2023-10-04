@@ -1,0 +1,10 @@
+{
+    "name": "석이떡",
+    "image": "https://picsum.photos/200",
+    "ingredients": [
+        "팥",
+        "쌀가루"
+    ],
+    "description": "맛있는 떡",
+    "book": "음식디미방"
+}

@@ -1,0 +1,10 @@
+{
+    "name": "김치",
+    "image": "",
+    "ingredients": [
+        "배추",
+        "소금"
+    ],
+    "description": "채소 절임",
+    "book": "음식디미방"
+}
