@@ -8,7 +8,7 @@ import App, { loader as appLoader } from "./App";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/korean-cuisine",
     element: <App />,
     errorElement: <ErrorPage />,
     loader: appLoader,
