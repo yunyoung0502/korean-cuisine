@@ -3,7 +3,7 @@ on:
   push:
       branches: [ main ]
       paths:
-        - 'src/data/**'
+        - '**'
 
 jobs:
   build:
