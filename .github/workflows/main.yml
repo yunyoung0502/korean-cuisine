@@ -1,0 +1,22 @@
+name: Git Repository Update
+on:
+  push:
+      branches: [ main ]
+      paths:
+        - '**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using ssh key
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }} 
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        port: 22
+        script: |
+            cd /home/ubuntu/${{ github.event.repository.name }}
+            chmod +x deploy-ssh.sh
+            sh deploy-ssh.sh
