@@ -14,7 +14,7 @@ const router = createBrowserRouter([
     loader: appLoader,
   },
   {
-    path: "recipes/:recipeId",
+    path: "/korean-cuisine/recipes/:recipeId",
     loader: recipeLoader,
     errorElement: <ErrorPage />,
     element: <RecipeDetail />,
