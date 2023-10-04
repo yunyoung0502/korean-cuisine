@@ -35,6 +35,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   automerge:
+    if: github.event.pull_request != null
     needs: verify-json-validation
     runs-on: ubuntu-latest
     steps:
