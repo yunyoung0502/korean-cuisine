@@ -1,13 +1,30 @@
 {
-  type: "object",
-  properties: {
-    student_id: {type: "integer"},
-    name: {type: "string"},
-    image: {type: "string"},
-    ingredients: {type: "array"},
-    description: {type:"string"},
-    book: {type:"string"}
-  },
-  required: ["student_id", "name", "ingredients", "book"],
-  additionalProperties: false
+   "type":"object",
+   "properties":{
+      "student_id":{
+         "type":"integer"
+      },
+      "name":{
+         "type":"string"
+      },
+      "image":{
+         "type":"string"
+      },
+      "ingredients":{
+         "type":"array"
+      },
+      "description":{
+         "type":"string"
+      },
+      "book":{
+         "type":"string"
+      }
+   },
+   "required":[
+      "student_id",
+      "name",
+      "ingredients",
+      "book"
+   ],
+   "additionalProperties":false
 }
