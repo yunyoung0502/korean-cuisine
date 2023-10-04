@@ -18,4 +18,5 @@ jobs:
         port: 22
         script: |
             cd /home/ubuntu/${{ github.event.repository.name }}
+            chmod +x deploy-ssh.sh
             sh deploy-ssh.sh
