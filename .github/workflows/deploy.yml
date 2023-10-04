@@ -1,0 +1,36 @@
+name: Deploy React App to GCE
+
+on:
+  push:
+    branches:
+      - main # or your default branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@master
+
+      - name: Setup SSH key for GCE
+        run: echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/gcp_cola
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.COLA_SECRET }}
+
+      - name: Set SSH permissions
+        run: chmod 600 ~/.ssh/gcp_cola
+
+      - name: SSH and Deploy
+        run: |
+          ssh-keyscan 34.64.205.40 >> ~/.ssh/known_hosts
+          ssh -i ~/.ssh/gcp_cola root@34.64.205.40 <<EOF
+            cd /home/ubuntu/korean-cuisine
+            git pull origin main  # or your default branch
+            npm install
+            npm run build
+            npm start
+          EOF
