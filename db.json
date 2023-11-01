@@ -1,0 +1,67 @@
+[
+    {
+        "student_id": 20185305,
+        "name": "김치",
+        "image": "",
+        "ingredients": [
+            "배추",
+            "소금"
+        ],
+        "description": "채소 절임",
+        "book": "음식디미방",
+        "id": "JHq11j14",
+        "created_at": "2023-11-01T16:46:28.609027"
+    },
+    {
+        "student_id": 20185305,
+        "name": "석이떡",
+        "image": "https://picsum.photos/200",
+        "ingredients": [
+            "팥",
+            "쌀가루"
+        ],
+        "description": "맛있는 떡",
+        "book": "음식디미방",
+        "id": "KNpgPY0p",
+        "created_at": "2023-11-01T16:46:28.611137"
+    },
+    {
+        "student_id": 20185305,
+        "name": "도토리죽",
+        "image": "",
+        "ingredients": [
+            "도토리",
+            "쌀가루"
+        ],
+        "description": "도토리로 만든 죽",
+        "book": "음식디미방",
+        "id": "0AOe3EV6",
+        "created_at": "2023-11-01T16:46:28.611211"
+    },
+    {
+        "student_id": 20185305,
+        "name": "막걸리",
+        "image": "https://picsum.photos/200",
+        "ingredients": [
+            "쌀",
+            "팥"
+        ],
+        "description": "맛있는 술",
+        "book": "수운잡방",
+        "id": "UEs3r1BX",
+        "created_at": "2023-11-01T16:46:28.611274"
+    },
+    {
+        "student_id": 20185305,
+        "name": "포계",
+        "description": "조선시대 닭고기 요리",
+        "image": "https://picsum.photos/200",
+        "book": "산가요록",
+        "ingredients": [
+            "밀가루",
+            "닭"
+        ],
+        "id": "zLndbVcX",
+        "created_at": "2023-11-01T16:46:28.611335"
+    }
+]

@@ -1,0 +1,37 @@
+{
+   "type": "object",
+   "properties": {
+      "student_id": {
+         "type": "integer",
+         "pattern": "^[^\\s]+$"
+      },
+      "name": {
+         "type": "string",
+         "pattern": "^[^\\s]+$"
+      },
+      "image": {
+         "type": "string"
+      },
+      "ingredients": {
+         "type": "array",
+         "items": {
+            "type": "string",
+            "pattern": "^[^\\s]+$"
+         }
+      },
+      "description": {
+         "type": "string"
+      },
+      "book": {
+         "type": "string",
+         "pattern": "^[^\\s]+$"
+      }
+   },
+   "required": [
+      "student_id",
+      "name",
+      "ingredients",
+      "book"
+   ],
+   "additionalProperties": false
+}
