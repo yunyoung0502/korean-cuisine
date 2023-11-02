@@ -10,12 +10,10 @@ def generate_random_string_id(length=8):
     return "".join(random.choice(letters_and_digits) for i in range(length))
 
 
-# Function to sort JSON by 'created_at' field
 def sort_by_created_at(json_list):
     return sorted(json_list, key=lambda x: x["created_at"])
 
 
-# Check if 'db.json' exists, and if so, load its data; otherwise, create it with a default value
 merged_json = {"recipes": []}
 if os.path.exists("db.json"):
     with open("db.json", "r") as f:
@@ -24,13 +22,13 @@ else:
     with open("db.json", "w") as f:
         json.dump(merged_json, f, ensure_ascii=False, indent=4)
 
-# Create a set to store unique representations of the existing JSON objects
+
 existing_json_set = set(
     json.dumps({k: v for k, v in item.items() if k not in ["id", "created_at"]})
     for item in merged_json["recipes"]
 )
 
-# Load new JSON files and append them to the existing data
+
 json_files = [
     os.path.join("./data", f)
     for f in os.listdir("./data")
@@ -53,10 +51,8 @@ for json_file in json_files:
             merged_json["recipes"].append(json_data)
             existing_json_set.add(json_rep)
 
-# Sort the merged JSON by the 'created_at' field
 merged_json["recipes"] = sort_by_created_at(merged_json["recipes"])
 
-# Save the sorted, merged JSON back to 'db.json'
 with open("db.json", "w") as f:
     json.dump(
         merged_json,
