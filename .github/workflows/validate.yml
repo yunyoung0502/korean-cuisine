@@ -23,20 +23,28 @@ jobs:
           echo "JSON validation failed. Halting workflow."
           exit 1
 
+
       - name: Add automerge label
         if: steps.validate.outcome == 'success'
         uses: actions/github-script@v5
         with:
           script: |
             const issue_number = context.payload.pull_request.number;
+            console.log(`Adding labels to PR #${issue_number}`);
             github.rest.issues.addLabels({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: issue_number,
               labels: ['automerge']
+            }).then((response) => {
+              console.log('Label added:', response.data);
+            }).catch((error) => {
+              console.error('Error adding label:', error);
+              throw error;  // Ensure that the action fails on error
             });
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
   automerge:
     needs: verify-json-validation
