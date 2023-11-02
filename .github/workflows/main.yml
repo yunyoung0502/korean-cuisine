@@ -5,7 +5,10 @@ on:
     paths:
       - '**'
     types: [closed]
-
+  push:
+    branches: [main]
+    paths:
+      - '**'
     
 jobs:
   build:
