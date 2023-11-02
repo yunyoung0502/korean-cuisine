@@ -1,8 +1,8 @@
-# Getting Started with Create React App
+# 고려대학교 디지털 인문학 입문 05분반
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+한식의 기원 반 프로젝트 데이터 업로드 저장소입니다.
 
-## Available Scripts
+## 저장소 Fork 하기
 
 In the project directory, you can run:
 
