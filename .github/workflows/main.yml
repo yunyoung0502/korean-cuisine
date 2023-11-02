@@ -1,10 +1,12 @@
 name: Git Repository Update
 on:
-  push:
-      branches: [ main ]
-      paths:
-        - '**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - '**'
+    types: [closed]
 
+    
 jobs:
   build:
     runs-on: ubuntu-latest
