@@ -41,7 +41,6 @@
       "student_id",
       "name",
       "image",
-      "image_prompt",
       "ingredients",
       "original",
       "translated",
