@@ -1,7 +1,7 @@
 {
     "student_id": "teacher05",
     "name": "만두",
-    "image": "images/dumling.png",
+    "image": "images/dumpling.png",
     "image_prompt": "Photo of a traditional Korean dining setting featuring a serving of freshly cooked dumplings made with buckwheat and mung beans. The dumplings are displayed in a ceramic bowl, highlighting their delicate shapes and the light, golden-brown crust, accompanied by typical Korean side dishes and garnishes resembling those used in semyeon noodles.",
     "ingredients": [
         "메밀",
