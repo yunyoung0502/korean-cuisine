@@ -1,0 +1,24 @@
+name: automerge
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  verify-json-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Validate JSON
+        id: validate
+        uses: nhalstead/validate-json-action@0.1.3
+        with:
+          schema: schema.json
+          jsons: data/*.json
+
+      - name: Fail on JSON Validation Error
+        if: steps.validate.outcome == 'failure'
+        run: |
+          echo "JSON validation failed. Halting workflow."
+          exit 1
